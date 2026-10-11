@@ -60,7 +60,6 @@
 @container(max-width:650px){#mriya-projects .site .trust{grid-template-columns:1fr}}
 </style>
 <div id="mriya-projects">
-<div class="preview-controls"><span>МРІЯ-АУДИТ · Головна, 13 послуг та розділ захисту</span><button type="button" id="mriya-width" aria-pressed="false">Мобільний вигляд</button></div>
 <div aria-label="Обраний проєкт сайту МРІЯ-АУДИТ">
 <section aria-label="Сучасний контраст"><div class="site contrast"></div></section>
 </div>
@@ -93,8 +92,8 @@
 Кваліфікацію аудитора отримано у 2008 році.
 Реєстровий номер аудитора: 102001.</p></article></div></section>
 <section class="section process"><div class="section-heading"><div><p class="eyebrow">ПОРЯДОК РОБОТИ</p><h2>Від завдання до результату</h2></div><p>Формат, строки й вартість визначаємо після ознайомлення з вашим запитом.</p></div><ol><li><b>Знайомимося</b><span>Обговорюємо завдання та вихідні дані.</span></li><li><b>Погоджуємо</b><span>Визначаємо обсяг, строки та умови роботи.</span></li><li><b>Працюємо</b><span>Вивчаємо документи, здійснюємо виїзд до клієнта.</span></li><li><b>Звітуємо</b><span>Передаємо погоджений результат і пояснюємо висновки.</span></li></ol></section>
-<section class="section contact" data-section="contact"><div><p class="eyebrow">ПОЧНІМО З ВАШОГО ЗАВДАННЯ</p><h2>Обговоримо,<br/>чим можемо допомогти</h2><p>Залиште контакт і коротко опишіть питання. Це допоможе визначити наступний крок.</p><span class="contact-location">Суми · Україна</span></div><form><label>Ваше ім’я<input autocomplete="off" name="name" placeholder="Як до вас звертатися" required=""/></label><label>Телефон або email<input autocomplete="off" name="contact" placeholder="Зручний спосіб зв’язку" required=""/></label><label>Ваше завдання<textarea name="task" placeholder="Послуга, період, бажані строки" rows="3"></textarea></label><button class="action" type="submit">Отримати пропозицію ↗</button><p aria-live="polite" class="form-note">Демонстраційна форма — дані не надсилаються.</p></form></section>
-</main><footer><b>МРІЯ-АУДИТ</b><span>Аудиторські послуги · податкове консультування · правнича допомога</span><span>Проєкт для погодження</span></footer>
+<section class="section contact" data-section="contact"><div><p class="eyebrow">ПОЧНІМО З ВАШОГО ЗАВДАННЯ</p><h2>Обговоримо,<br/>чим можемо допомогти</h2><p>Залиште контакт і коротко опишіть питання. Це допоможе визначити наступний крок.</p><span class="contact-location">Суми · Україна</span></div><form><label>Ваше ім’я<input autocomplete="off" name="name" placeholder="Як до вас звертатися" required=""/></label><label>Телефон або email<input autocomplete="off" name="contact" placeholder="Зручний спосіб зв’язку" required=""/></label><label>Ваше завдання<textarea name="task" placeholder="Послуга, період, бажані строки" rows="3"></textarea></label><button class="action" type="submit">Отримати пропозицію ↗</button></form></section>
+</main>
 </template>
 </div>
 <style>
@@ -108,7 +107,7 @@
 </style>
 <template id="mriya-contacts"><a href="tel:+380954237433">+380 95 423 74 33</a><a href="tel:+380505884207">+380 50 588 42 07</a><a href="mailto:afmriya@meta.ua">afmriya@meta.ua</a><a href="mailto:afmriya6@gmail.com">afmriya6@gmail.com</a><address>Юридична адреса: 40004, м. Суми,<br>просп. Т. Г. Шевченка, 11, кв. 18.</address></template>
 <script>
-(()=>{const root=document.getElementById('mriya-projects');const tpl=document.getElementById('mriya-layout');root.querySelectorAll('.site').forEach(site=>{site.appendChild(tpl.content.cloneNode(true));site.addEventListener('click',e=>{const b=e.target.closest('[data-go],[data-service]');if(!b)return;e.preventDefault();let target;if(b.dataset.service){target=site.querySelector('[data-id="'+b.dataset.service+'"]');target.open=true;}else{target=site.querySelector('[data-section="'+b.dataset.go+'"]');}if(target)target.scrollIntoView({behavior:'smooth',block:'start'});});site.querySelector('form').addEventListener('submit',e=>{e.preventDefault();site.querySelector('.form-note').textContent='Це демонстрація: звернення не надіслано. На робочому сайті тут буде підтвердження відправлення.';});});const width=document.getElementById('mriya-width');width.addEventListener('click',()=>{const mobile=root.classList.toggle('mobile');width.setAttribute('aria-pressed',String(mobile));width.textContent=mobile?'Настільний вигляд':'Мобільний вигляд';});})();
+(()=>{const root=document.getElementById('mriya-projects');const tpl=document.getElementById('mriya-layout');root.querySelectorAll('.site').forEach(site=>{site.appendChild(tpl.content.cloneNode(true));site.addEventListener('click',e=>{const b=e.target.closest('[data-go],[data-service]');if(!b)return;e.preventDefault();let target;if(b.dataset.service){target=site.querySelector('[data-id="'+b.dataset.service+'"]');target.open=true;}else{target=site.querySelector('[data-section="'+b.dataset.go+'"]');}if(target)target.scrollIntoView({behavior:'smooth',block:'start'});});site.querySelector('form').addEventListener('submit',e=>{e.preventDefault();});});})();
 </script>
 <script>
 (()=>{const root=document.getElementById('mriya-projects');root.querySelector('.contact-location').appendChild(document.getElementById('mriya-contacts').content.cloneNode(true));})();
